@@ -4,15 +4,42 @@
 
 int space_char(char c)
 {
-  if(c<'!')
+  if(c < '!')
     {
-      printf("%c is a space\n", c);
       return 1;
     }
   else
     {
-      printf("%c is not a space\n", c);
       return 0;
     }
 }
+
+int non_space_char(char c)
+{
+  if(c >= '!')
+    {
+      return 1;
+    }
+  else
+    {
+      return 0;
+    }
+}
+
+char *word_start(char *str)
+{
+  int n = 0;
+  while(space_char(str[0+n]) == 1)
+    {
+      n++;
+    }
+  return &str[0+n];
+}
+
+
+
+
+
+
+
 
