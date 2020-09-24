@@ -14,7 +14,10 @@ int main()
       char input[200];
       char string[200];
 
-      printf("\n\nPress 't' to tokenize\nPress'h' to view all input history\nPress '!' followed by ID to view specific history input\nPress 'q' to quit\n");
+      printf("\n\nPress 't' to tokenize");
+      printf("\nPress'h' to view all input history");
+      printf("\nPress '!' followed by ID to view specific history input");
+      printf("\nPress 'q' to quit\n");
       printf("\n> ");
       scanf(" %[^\n]", input);
 
@@ -37,12 +40,13 @@ int main()
       else if(input[0] == '!')
 	{
 	  int id = atoi(input + 1);
-	  printf("%s\n", get_history(hist, id));
+	  printf("\n%s\n", get_history(hist, id));
 	}
-      
+ 
       else if(input[0] == 'q')
 	{
 	  printf("\nThank you for using Tokenizer!\n");
+	  free_history(hist);
 	  return 0;
 	}
       
